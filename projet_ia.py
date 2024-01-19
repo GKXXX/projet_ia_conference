@@ -68,10 +68,10 @@ llm = Ollama(
 
 create_table()
 
-target_date = datetime.now().date() - timedelta(days=1)
+target_date = datetime.now().date() - timedelta(days=2)
 
-rss_link = "https://www.frandroid.com/feed"
-num_articles_to_retrieve = 5
+rss_link = "https://www.codesimplicity.com/feed/"
+num_articles_to_retrieve = 10
 
 articles = fetch_rss_feed(rss_link)
 filtered_articles = filter_articles_by_day(articles, target_date)
