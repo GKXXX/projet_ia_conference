@@ -1,6 +1,6 @@
 # Projet IA Veille Technologique
 
-Ce projet en Python a pour objectif de récupérer des articles via un flux RSS et, à l'aide d'un modèle de Langage de Modélisation (LLM) en intelligence artificielle, de générer un résumé pour chaque article.
+Ce projet en Python a pour objectif de récupérer des articles via un flux RSS et, à l'aide d'un modèle de Langage de Modélisation (LLM) en intelligence artificielle, de générer un résumé pour chaque article. Ce projet doit être installé et éxécuté sur une marchine virtuelle Ubuntu.
 
 ## Configuration
 
@@ -62,9 +62,20 @@ Ce projet en Python a pour objectif de récupérer des articles via un flux RSS 
    python3 main.py
    ```
 
+#  
+Mettez en place SQLite3 pour la gestion du stockage des articles
+
+- Obtenez le fichier précompilé de SQLite pour Windows en le téléchargeant depuis le site officiel SQLite: https://www.sqlite.org/download.html
+- Intégrez une nouvelle variable d'environnement système dans le PATH de Windows. Cette variable doit pointer vers le répertoire où se trouvent les outils SQLite précompilés (sqlite-tools-win-x64).
+
+
+
 ## Execution du script
 
-Après avoir lancé le script main.py, des informations seront affichées dans la console, comprenant le titre des articles, la date de publication (correspondant à la date actuelle), ainsi que le résumé de chaque article généré par le modèle d'IA sélectionné. À la fin de l'exécution, tous les résumés des articles seront sauvegardés dans le dossier summary du projet (/summary/{nom_du_flux}/{date}/nom_de_l'article).
+Après avoir lancé le script main.py, des informations seront stockées dans la base de donnée. Vous pourrez ensuite via des requêtes sql, accéder aux différents résumés des différents articles agrégés par le script avec des requêtes du type : 
+```SQL
+   SELECT title,content FROM articles;
+   ```
 
 **Si vous souhaitez modifier deux paramètres dans le fichier main.py :**
 Modifiez le nombre maximum d'articles pris en compte dans le résumé en ajustant la variable :
