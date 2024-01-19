@@ -79,5 +79,5 @@ selected_articles = select_top_articles(filtered_articles, num_articles_to_retri
 
 for article in selected_articles:
     article_title = retrieve_content(article.link)
-    content_summarized = llm("Here is an article title. I would like you to provide me with additional information based on this title, in order to create a short article on the subject of this title : " + article_title + "\n\n")
+    content_summarized = llm("Presented is a title of an article. I'm requesting supplementary details derived from this title to facilitate the creation of a brief article pertaining to the subject of the given title" + article_title + "\n\n")
     insert_title(article_title, content_summarized)
